@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Robot</title>
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body class="back">
+
+	<div class="container-fluid">
+		
+		<div class="card mb-4 ">
+			<div class="card-body">
+				<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+					<div class="form-group titulo "><label class="small mb-1">Marcar solo si usted es un robot</label>
+						<input type="radio" th:field="*{soyrobot}" th:value="*{false}">
+						<span th:errors="*{soyrobot}" style="color:#DE0000" ></span><br>
+					</div>
+					<div class="form-group centro "><input type="submit" class="btn  btn-primary " value="Aceptar">
+					</div>
+				</form>
+				<div class="form-group "><a href="/producto"><input type="submit" class="btn btn-warning " value="Regresar"></a></div>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+
+</body>
+</html>

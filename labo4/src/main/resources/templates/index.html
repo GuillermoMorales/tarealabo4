@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Venta de producto</title>
+<link href="css/admin.css" rel="stylesheet">
+</head>
+<body id="page-top" class="back">
+	
+	
+	<div class="container-fluid">
+		
+	
+		<div class="card mb-4">
+			<div class="card-body">
+			<h1 >Ingresar Producto</h1>
+				<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+					<div class="form-group"><label class="small mb-1" for="nombre" >Nombre del producto:</label>
+						<input  class="form-control py-4" style="width: 400px" placeholder="Ingrese el nombre del producto" type="text" th:field="*{nombre}">
+						<span th:errors="*{nombre}" style="color:#DE0000" ></span>
+					</div>
+					
+					<div class="form-group"><label class="small mb-1" for="descripcion">Descripción del producto:</label>
+						<input class="form-control py-4"  style="width: 400px" type="text" placeholder="Ingrese la descripción del producto" th:field="*{descripcion}">
+						<span th:errors="*{descripcion}" style="color:#DE0000" ></span>
+					</div>
+					
+					<div class="form-group"><label class="small mb-1" for="precio">Precio del producto:</label>
+						<input class="form-control py-4"  style="width: 400px" type="number" placeholder="Ingrese el precio del producto" th:field="*{precio}">
+						<span th:errors="*{precio}" style="color:#DE0000" ></span>
+					</div>
+					
+					<div class="form-group"><label  class="small mb-1" for="vencimiento">Fecha vencimiento del producto:</label>
+						<input type="text" class="form-control py-4" style="width: 400px" placeholder="Ingrese la fecha de vencimiento" th:field="*{vencimiento}">
+						<span th:errors="*{vencimiento}" style="color:#DE0000" ></span>
+					</div>
+					
+					<div class="form-group"><input type="submit" class="btn btn-primary" value="Agregar Producto"></div>
+		
+				</form>
+			</div>
+		</div>	
+	</div>
+</body>
+</html>
